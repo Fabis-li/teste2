@@ -11,8 +11,14 @@ namespace Estoque.Models
         public string DescricaoChamado { get; set; }
         public string EquipamentoRelacionado { get; set; }
         public DateTime DataAbertura { get; set; }
+        // public DateTime DataAtual { get; set; } = DateTime.Now;
 
-        public DateTime DataAtual { get; set; } = DateTime.Now;
+        public int DiasEmAberto{
+            get{
+                TimeSpan diasAberto = DateTime.Now - DataAbertura;
+                return (int)diasAberto.TotalDays;
+            }
+        }
        
 
         public ChamadoModel() { } 
@@ -24,14 +30,15 @@ namespace Estoque.Models
             EquipamentoRelacionado = equipamentoRelacionado;
             DataAbertura = dataAbertura;
             
+
         }
 
         public virtual string ObterChamado()
         {
-            return $"Título do chamado: {TituloChamado} - Equipamento relacionado: {EquipamentoRelacionado} - Data de abertura: {DataAbertura} - Dias em aberto: {DataAtual.Subtract(DataAbertura).Days}";
+            return $"Título do chamado: {TituloChamado} - Equipamento relacionado: {EquipamentoRelacionado} - Data de abertura: {DataAbertura} - Dias em aberto: {DiasEmAberto} dias.";
         }
 
-        public void EditarChamado(string tituloChamado, string descricaoChamado, string equipamentoRelacionado, DateTime dataAbertura, DateTime dataAtual)
+        public void EditarChamado(string tituloChamado, string descricaoChamado, string equipamentoRelacionado, DateTime dataAbertura)
         {
             TituloChamado = tituloChamado;
             DescricaoChamado = descricaoChamado;
