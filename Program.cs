@@ -12,9 +12,12 @@ namespace Estque.Models
         {
             EquipamentosRepository equipamentosRepository = new EquipamentosRepository();
             ChamadosRepository chamadosRepository = new ChamadosRepository();
+
             PopListaEquip(equipamentosRepository);
             PopListaChamado(chamadosRepository);
-            MenuScreen.Iniciar(equipamentosRepository, chamadosRepository);            
+            MenuScreen.Iniciar(equipamentosRepository, chamadosRepository); 
+            // MenuScreenCham.Iniciar(chamadosRepository);
+
         }
 
         static void PopListaEquip(EquipamentosRepository equipamentosRepository)
@@ -30,7 +33,7 @@ namespace Estque.Models
             chamadosRepository.ListaDeChamados.Add(new ChamadoModel("Problema na tela", "Tela não funciona", "Notebook", new DateTime(2024, 01, 12)));
             chamadosRepository.ListaDeChamados.Add(new ChamadoModel("Problema na impressão","Acabou a tinta azul", "Impressora",new DateTime(2024, 01, 10)));
             chamadosRepository.ListaDeChamados.Add(new ChamadoModel("Problema na rede", "não conecta na rede","Servidor",new DateTime(2024, 01, 05)));
-            chamadosRepository.ListaDeChamados.Add(new ChamadoModel("Problema na rede","roteador queimado" ,"Roteador",new DateTime(2024, 02, 01)));
+            chamadosRepository.ListaDeChamados.Add(new ChamadoModel("Problema no cabo","cabo quebrado" ,"Roteador",new DateTime(2024, 02, 01)));
         }
     }
 }
