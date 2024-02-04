@@ -10,27 +10,23 @@ namespace Estoque.Models
         public string TituloChamado { get; set; }
         public string DescricaoChamado { get; set; }
         public string EquipamentoRelacionado { get; set; }
-        public DateTime DataAbertura { get; set; }
-        // public DateTime DataAtual { get; set; } = DateTime.Now;
+        public DateTime DataAbertura { get; set; }        
 
         public int DiasEmAberto{
             get{
                 TimeSpan diasAberto = DateTime.Now - DataAbertura;
                 return (int)diasAberto.TotalDays;
             }
-        }
-       
+        }       
 
         public ChamadoModel() { } 
 
         public ChamadoModel(string tituloChamado, string descricaoChamado, string equipamentoRelacionado, DateTime dataAbertura)
         {
-            TituloChamado = tituloChamado;
-            DescricaoChamado = descricaoChamado;
-            EquipamentoRelacionado = equipamentoRelacionado;
-            DataAbertura = dataAbertura;
-            
-
+            this.TituloChamado = tituloChamado;
+            this.DescricaoChamado = descricaoChamado;
+            this.EquipamentoRelacionado = equipamentoRelacionado;
+            this.DataAbertura = dataAbertura;
         }
 
         public virtual string ObterChamado()
@@ -40,18 +36,18 @@ namespace Estoque.Models
 
         public void EditarChamado(string tituloChamado, string descricaoChamado, string equipamentoRelacionado, DateTime dataAbertura)
         {
-            TituloChamado = tituloChamado;
-            DescricaoChamado = descricaoChamado;
-            EquipamentoRelacionado = equipamentoRelacionado;
-            DataAbertura = dataAbertura;            
+            this.TituloChamado = tituloChamado;
+            this.DescricaoChamado = descricaoChamado;
+            this.EquipamentoRelacionado = equipamentoRelacionado;
+            this.DataAbertura = dataAbertura;            
         }
 
         public void ExcluirChamado()
         {
-            TituloChamado = null;
-            DescricaoChamado = null;
-            EquipamentoRelacionado = null;
-            DataAbertura = DateTime.MinValue;
+            this.TituloChamado = null;
+            this.DescricaoChamado = null;
+            this.EquipamentoRelacionado = null;
+            this.DataAbertura = DateTime.MinValue;
         }
     }
 }
