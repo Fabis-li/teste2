@@ -44,8 +44,8 @@ namespace Estoque.Screens
                 var voltar = Console.ReadKey();
                 switch(voltar)
                 {
-                    default: Iniciar(chamadosRepository, equipamentosRepository);break;
-                }            
+                    default: ChamadosScreen.Iniciar(chamadosRepository, equipamentosRepository);break;
+                }           
             
             }
         }
