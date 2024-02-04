@@ -10,7 +10,7 @@ namespace Estoque.Screens
             Console.WriteLine("Controle de Equipamentos e Manutenção - Chamados");
             Console.WriteLine("------------------------------------------------------");
             Console.WriteLine("1 - Cadastrar");
-            Console.WriteLine("0 - Voltar ao menu Equipamentos");
+            Console.WriteLine("0 - Voltar ao menu Chamados");
             Console.WriteLine();
             Console.Write("Digite uma opção: ");
 
@@ -19,7 +19,7 @@ namespace Estoque.Screens
              switch(opcao)
              {
                  case 1: ChamadoModel(chamadosRepository, equipamentosRepository); break;
-                 case 0: ChamadosScreen.Iniciar(chamadosRepository,equipamentosRepository); break;
+                 case 0: ChamadosScreen.Iniciar(chamadosRepository, equipamentosRepository); break;
              }
 
              static void ChamadoModel(ChamadosRepository chamadosRepository, EquipamentosRepository equipamentosRepository)
@@ -43,7 +43,7 @@ namespace Estoque.Screens
                 var voltar = Console.ReadKey();
                 switch(voltar)
                 {
-                    default: EquipamentosScreen.Iniciar(equipamentosRepository,chamadosRepository); break;
+                    default: ChamadosScreen.Iniciar(chamadosRepository, equipamentosRepository); break;
                 }   
             }
         }
