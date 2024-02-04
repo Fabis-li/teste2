@@ -28,7 +28,7 @@ namespace Estoque.Screens
                 Console.WriteLine("---------------------");
                 Console.WriteLine("Digite o Título do chamado que deseja Editar: ");
                 string tituloChamado = Console.ReadLine();
-                var chamado = chamadosRepository.ListaDeChamados.FirstOrDefault(c => c.TituloChamado == Console.ReadLine());
+                var chamado = chamadosRepository.ListaDeChamados.FirstOrDefault(c => c.TituloChamado == tituloChamado);
                 if(chamado != null)
                 {
                     Console.WriteLine("Título do Chamado: ");
@@ -50,7 +50,7 @@ namespace Estoque.Screens
                 var voltar = Console.ReadKey();
                 switch(voltar)
                 {
-                    default: EquipamentosScreen.Iniciar(equipamentosRepository, chamadosRepository); break;
+                    default: ChamadosScreen.Iniciar(chamadosRepository, equipamentosRepository); break;
                 }   
             }
         }
