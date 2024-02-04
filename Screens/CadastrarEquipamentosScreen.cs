@@ -31,8 +31,18 @@ namespace  Estoque.Screens
                 Console.WriteLine();
                 Console.WriteLine("Cadastrar Equipamento");
                 Console.WriteLine("---------------------");
-                Console.WriteLine("Nome do Equipamento: ");
-                equipamento.NomeEquipamento = Console.ReadLine();
+                Console.WriteLine("Nome do Equipamento: "); 
+                string nomeEquipamento = Console.ReadLine();
+                if (nomeEquipamento.Length < 6)
+                {
+                    Console.WriteLine("O nome do equipamento deve ter no mínimo 6 caracteres");
+                    Console.WriteLine("Pressione qualquer tecla para voltar");
+                    var menuAnterior = Console.ReadKey();
+                    switch(menuAnterior)
+                    {
+                        default: EquipamentosScreen.Iniciar(equipamentosRepository, chamadosRepository); break;
+                    }
+                }                
                 Console.WriteLine("Preço de Aquisição: ");
                 equipamento.PrecoAquisicao = decimal.Parse(Console.ReadLine());
                 Console.WriteLine("Número de Série: ");
