@@ -1,12 +1,7 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
 namespace Estoque.Models
 {
     public class EquipamentoModel
-    {
+    {            
         public string NomeEquipamento { get; set; }
         public decimal PrecoAquisicao { get; set; }
         public string NumeroSerie { get; set; }
@@ -46,6 +41,7 @@ namespace Estoque.Models
             this.DataFabricacao = DateTime.MinValue;
             this.Fabricante = null;
         }
+        
     }
 
 }
