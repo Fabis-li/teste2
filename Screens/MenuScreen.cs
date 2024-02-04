@@ -27,6 +27,7 @@ namespace Estoque.Screens
             static void Opcoes()
             {
                 Console.WriteLine("Controle de Equipamentos e Manutenção - Menu Principal");
+                Console.WriteLine("------------------------------------------------------");
                 Console.WriteLine("1 - Equipamentos");
                 Console.WriteLine("2 - Chamados de Manutenção");
                 Console.WriteLine("0 - Sair");
